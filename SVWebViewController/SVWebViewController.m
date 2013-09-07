@@ -177,9 +177,14 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self.navigationController setToolbarHidden:YES animated:animated];
-    }
+    //
+    // comment-out:
+    // Let next-pushed-viewController handle toolbarHidden behavior,
+    // or awkward hidden->revisible transition occurs.
+    //
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//        [self.navigationController setToolbarHidden:YES animated:animated];
+//    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
